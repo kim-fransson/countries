@@ -1,0 +1,49 @@
+:root {
+  /* ——— Colors ——— */
+  --color-bg: hsl(0, 0%, 100%);
+  --color-text: hsl(202, 55%, 16%);
+  --color-text-muted: hsl(200, 24%, 40%);
+  --color-accent: hsl(202, 86%, 94%);
+
+  /* ——— Spacing (base-8) ——— */
+  --space-100: 0.5rem; /*  8px */
+  --space-200: 1rem; /* 16px */
+  --space-300: 1.5rem; /* 24px */
+  --space-400: 2rem; /* 32px */
+  --space-500: 2.5rem; /* 40px */
+  --space-600: 3rem; /* 48px */
+  --space-700: 3.5rem; /* 56px */
+  --space-800: 4rem; /* 64px */
+  --space-900: 4.5rem; /* 72px */
+  --space-1000: 5rem; /* 80px */
+  --space-1100: 6rem; /* 96px */
+  --space-1200: 8rem; /* 128px */
+  --space-1300: 10rem; /* 160px */
+
+  /* ——— Typography — Font family ——— */
+  --font-family: "Nunito Sans", sans-serif;
+
+  /* ——— Typography — Font weights ——— */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-extrabold: 800;
+
+  /* ——— Typography — Font sizes ——— */
+  --fs-xs: 0.75rem; /* 12px */
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-base: 1rem; /* 16px */
+  --fs-md: 1.125rem; /* 18px */
+  --fs-lg: 1.5rem; /* 24px */
+  --fs-xl: 2rem; /* 32px */
+
+  /* ——— Typography — Line heights ——— */
+  --lh-tight: 135%; /* preset 6 */
+  --lh-snug: 137.5%; /* presets 1 & 2 */
+  --lh-normal: 145%; /* presets 3 & 5-regular */
+  --lh-relaxed: 200%; /* preset 4 */
+  --lh-loose: 225%; /* preset 5-light */
+
+  /* ——— Layout ——— */
+  --content-max-width: 70rem; /* 1120px */
+}
