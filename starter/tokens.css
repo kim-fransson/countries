@@ -10,6 +10,7 @@
   --color-grey-50: hsl(0, 0%, 99%);
   --color-blue-950: hsl(207, 26%, 17%);
   --color-blue-900: hsl(209, 23%, 22%);
+  --color-blue-800: hsl(209, 63%, 32%);
 
   /* ——— Spacing (base-8) ——— */
   --space-100: 0.5rem; /*  8px */

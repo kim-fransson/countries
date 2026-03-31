@@ -11,6 +11,12 @@ export const LIGHT_COLORS = {
   "--color-header-bg": "var(--color-white)",
   "--color-header-text": "var(--color-grey-950)",
   "--color-header-shadow": "0px 2px 4px rgba(0, 0, 0, 0.0562443)",
+  "--color-search-bg": "var(--color-white)",
+  "--color-search-text": "var(--color-grey-950)",
+  "--color-search-placeholder": "var(--color-grey-400)",
+  "--color-search-icon": "var(--color-grey-400)",
+  "--color-search-shadow": "0px 2px 9px rgba(0, 0, 0, 0.0532439)",
+  "--color-focus-ring": "var(--color-blue-800)",
 };
 
 export const DARK_COLORS = {
@@ -24,4 +30,10 @@ export const DARK_COLORS = {
   "--color-header-bg": "var(--color-blue-900)",
   "--color-header-text": "var(--color-white)",
   "--color-header-shadow": "0px 2px 4px rgba(0, 0, 0, 0.0562443)",
+  "--color-search-bg": "var(--color-blue-900)",
+  "--color-search-text": "var(--color-white)",
+  "--color-search-placeholder": "var(--color-white)",
+  "--color-search-icon": "var(--color-white)",
+  "--color-search-shadow": "0px 2px 9px rgba(0, 0, 0, 0.0532439)",
+  "--color-focus-ring": "var(--color-blue-800)",
 };
