@@ -12,6 +12,7 @@ import {
   DARK_COLORS,
 } from "@/constants";
 import styles from "./DarkLightToggle.module.css";
+import { setCSSVariables } from "@/utils";
 
 export type DarkLightToggleProps = {
   defaultTheme?: "light" | "dark";
@@ -35,9 +36,7 @@ function DarkLightToggle({
     const root = document.documentElement;
     const colors = nextTheme === "light" ? LIGHT_COLORS : DARK_COLORS;
     root.setAttribute("data-color-theme", nextTheme);
-    Object.entries(colors).forEach(([key, value]) => {
-      root.style.setProperty(key, value);
-    });
+    setCSSVariables(colors);
   }
 
   const isLightMode = theme === "light";

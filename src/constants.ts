@@ -8,6 +8,9 @@ export const LIGHT_COLORS = {
   "--color-button-bg": "var(--color-white)",
   "--color-button-text": "var(--color-grey-950)",
   "--color-button-shadow": "0px 0px 7px rgba(0, 0, 0, 0.1)",
+  "--color-header-bg": "var(--color-white)",
+  "--color-header-text": "var(--color-grey-950)",
+  "--color-header-shadow": "0px 2px 4px rgba(0, 0, 0, 0.0562443)",
 };
 
 export const DARK_COLORS = {
@@ -18,4 +21,7 @@ export const DARK_COLORS = {
   "--color-button-bg": "var(--color-blue-950)",
   "--color-button-text": "var(--color-white)",
   "--color-button-shadow": "0px 0px 7px rgba(0, 0, 0, 0.1)",
+  "--color-header-bg": "var(--color-blue-900)",
+  "--color-header-text": "var(--color-white)",
+  "--color-header-shadow": "0px 2px 4px rgba(0, 0, 0, 0.0562443)",
 };

@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { Nunito_Sans } from "next/font/google";
 
-import { THEME_COOKIE_NAME, LIGHT_COLORS, DARK_COLORS } from "@/constants";
+import {
+  THEME_COOKIE_NAME,
+  LIGHT_COLORS,
+  DARK_COLORS,
+} from "@/constants";
 import DarkLightToggle from "@/components/DarkLightToggle";
 import "./globals.css";
+import LanguageProvider from "@/components/LanguageProvider";
+import Header from "@/components/Header";
 
 const nunitoSans = Nunito_Sans({
   variable: "--font-nunito-sans",
@@ -21,24 +27,26 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const acceptLanguage = (await headers()).get("accept-language");
+  const lang = acceptLanguage?.split(/[,;]/)[0] || "en-US";
+
   const savedTheme = (await cookies()).get(THEME_COOKIE_NAME);
   const theme = savedTheme?.value || "light";
 
-  const themeColors =
-    theme === "light" ? LIGHT_COLORS : DARK_COLORS;
+  const themeColors = theme === "light" ? LIGHT_COLORS : DARK_COLORS;
 
   return (
     <html
-      lang="en"
+      lang={lang}
       data-color-theme={theme}
       className={nunitoSans.variable}
       style={themeColors as React.CSSProperties}
     >
       <body>
-        <header>
-          <DarkLightToggle defaultTheme={theme as "light" | "dark"} />
-        </header>
-        {children}
+        <LanguageProvider lang={lang}>
+          <Header defaultTheme={theme as "light" | "dark"} />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );
