@@ -26,7 +26,7 @@ export const Light: Story = {
       <div
         style={{
           ...(LIGHT_COLORS as React.CSSProperties),
-          padding: "2rem",
+          padding: "4rem",
           background: "var(--color-bg)",
         }}
       >
@@ -63,10 +63,10 @@ export const Dark: Story = {
   ],
   play: async ({ canvas }) => {
     const button = canvas.getByRole("button", {
-      name: "Toggle dark mode",
+      name: "Toggle light mode",
     });
     await expect(button).toHaveAttribute("aria-pressed", "true");
-    button.click();
+    await button.click();
     await expect(button).toHaveAttribute("aria-pressed", "false");
   },
 };
@@ -92,9 +92,9 @@ export const Interaction: Story = {
     const button = canvas.getByRole("button", {
       name: "Toggle dark mode",
     });
-    button.click();
+    await button.click();
     await expect(button).toHaveAttribute("aria-pressed", "true");
-    button.click();
+    await button.click();
     await expect(button).toHaveAttribute("aria-pressed", "false");
   },
 };

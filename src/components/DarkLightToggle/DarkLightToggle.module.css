@@ -17,7 +17,7 @@
 }
 
 .button[data-focus-visible] {
-  outline: 2px solid var(--color-text);
+  outline: 2px solid auto;
   outline-offset: 2px;
   border-radius: 2px;
 }

@@ -24,8 +24,8 @@ export const Light: Story = {
       <div
         style={{
           ...(LIGHT_COLORS as React.CSSProperties),
-          padding: "2rem",
-          background: "var(--color-bg)",
+          padding: "4rem",
+          background: "#ebf2f6",
         }}
       >
         <Story />
@@ -45,8 +45,8 @@ export const Dark: Story = {
       <div
         style={{
           ...(DARK_COLORS as React.CSSProperties),
-          padding: "2rem",
-          background: "var(--color-bg)",
+          padding: "4rem",
+          background: "#ebf2f6",
         }}
       >
         <Story />
