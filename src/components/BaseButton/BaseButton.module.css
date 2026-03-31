@@ -1,0 +1,32 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-100);
+  padding: var(--space-100) var(--space-300);
+  background: var(--color-button-bg);
+  color: var(--color-button-text);
+  box-shadow: var(--color-button-shadow);
+  border: none;
+  border-radius: 2px;
+  font-weight: var(--fw-light);
+  font-size: var(--fs-base);
+  line-height: var(--lh-relaxed);
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .button[data-pressed] {
+    scale: 0.97;
+  }
+}
+
+.button[data-focus-visible] {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+.button[data-disabled] {
+  opacity: 0.5;
+  cursor: default;
+}
