@@ -3,6 +3,7 @@ import { cookies } from "next/headers";
 import { Nunito_Sans } from "next/font/google";
 
 import { THEME_COOKIE_NAME, LIGHT_COLORS, DARK_COLORS } from "@/constants";
+import DarkLightToggle from "@/components/DarkLightToggle";
 import "./globals.css";
 
 const nunitoSans = Nunito_Sans({
@@ -33,7 +34,12 @@ export default async function RootLayout({
       className={nunitoSans.variable}
       style={themeColors as React.CSSProperties}
     >
-      <body>{children}</body>
+      <body>
+        <header>
+          <DarkLightToggle defaultTheme={theme as "light" | "dark"} />
+        </header>
+        {children}
+      </body>
     </html>
   );
 }
