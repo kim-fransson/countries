@@ -34,14 +34,6 @@ export const Light: Story = {
       </div>
     ),
   ],
-  play: async ({ canvas }) => {
-    const button = canvas.getByRole("button", {
-      name: "Toggle dark mode",
-    });
-    await expect(button).toHaveAttribute("aria-pressed", "false");
-    await button.click();
-    await expect(button).toHaveAttribute("aria-pressed", "true");
-  },
 };
 
 export const Dark: Story = {
@@ -61,14 +53,6 @@ export const Dark: Story = {
       </div>
     ),
   ],
-  play: async ({ canvas }) => {
-    const button = canvas.getByRole("button", {
-      name: "Toggle light mode",
-    });
-    await expect(button).toHaveAttribute("aria-pressed", "true");
-    await button.click();
-    await expect(button).toHaveAttribute("aria-pressed", "false");
-  },
 };
 
 export const Interaction: Story = {
@@ -94,7 +78,9 @@ export const Interaction: Story = {
     });
     await button.click();
     await expect(button).toHaveAttribute("aria-pressed", "true");
+    await expect(button).toHaveAccessibleName("Toggle light mode");
     await button.click();
     await expect(button).toHaveAttribute("aria-pressed", "false");
+    await expect(button).toHaveAccessibleName("Toggle dark mode");
   },
 };

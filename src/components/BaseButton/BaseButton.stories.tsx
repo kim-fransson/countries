@@ -35,11 +35,6 @@ export const Light: Story = {
       </div>
     ),
   ],
-  play: async ({ canvas, args }) => {
-    const button = canvas.getByRole("button", { name: "Back" });
-    await button.click();
-    await expect(args.onPress).toHaveBeenCalled();
-  },
 };
 
 export const Dark: Story = {
@@ -59,8 +54,27 @@ export const Dark: Story = {
       </div>
     ),
   ],
+};
+
+export const Interaction: Story = {
+  args: {
+    children: "Click me",
+  },
+  decorators: [
+    (Story) => (
+      <div
+        style={{
+          ...(DARK_COLORS as React.CSSProperties),
+          padding: "4rem",
+          background: "#ebf2f6",
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
   play: async ({ canvas, args }) => {
-    const button = canvas.getByRole("button", { name: "Back" });
+    const button = canvas.getByRole("button", { name: "Click me" });
     await button.click();
     await expect(args.onPress).toHaveBeenCalled();
   },
