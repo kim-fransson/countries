@@ -16,7 +16,9 @@ export const LIGHT_COLORS = {
   "--color-search-placeholder": "var(--color-grey-400)",
   "--color-search-icon": "var(--color-grey-400)",
   "--color-search-shadow": "0px 2px 9px rgba(0, 0, 0, 0.0532439)",
-  "--color-focus-ring": "var(--color-blue-800)",
+  "--color-card-bg": "var(--color-white)",
+  "--color-card-text": "var(--color-grey-950)",
+  "--color-card-shadow": "0px 0px 7px 2px rgba(0, 0, 0, 0.1)",
 };
 
 export const DARK_COLORS = {
@@ -35,5 +37,7 @@ export const DARK_COLORS = {
   "--color-search-placeholder": "var(--color-white)",
   "--color-search-icon": "var(--color-white)",
   "--color-search-shadow": "0px 2px 9px rgba(0, 0, 0, 0.0532439)",
-  "--color-focus-ring": "var(--color-blue-800)",
+  "--color-card-bg": "var(--color-blue-900)",
+  "--color-card-text": "var(--color-white)",
+  "--color-card-shadow": "0px 0px 7px 2px rgba(0, 0, 0, 0.1)",
 };
