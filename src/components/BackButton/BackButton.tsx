@@ -9,11 +9,13 @@ import type { BaseButtonProps } from "@/components/BaseButton";
 
 export type BackButtonProps = Omit<BaseButtonProps, "children">;
 
-function BackButton(props: BackButtonProps) {
+function BackButton({ onPress, ...props }: BackButtonProps) {
   const [style, trigger] = useBoop({ x: -3, timing: 150 });
 
+  const handlePress = onPress ?? (() => window.history.back());
+
   return (
-    <BaseButton {...props} onHoverStart={trigger}>
+    <BaseButton {...props} onPress={handlePress} onHoverStart={trigger}>
       <ArrowLeft size={20} style={style} />
       Back
     </BaseButton>

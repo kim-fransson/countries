@@ -1,6 +1,8 @@
 import Image from "next/image";
 import React from "react";
 
+import InfoList from "@/components/InfoList";
+
 import styles from "./FlagCard.module.css";
 import { capitalsToString } from "./helper";
 
@@ -34,22 +36,17 @@ function FlagCard({
       />
       <div className={styles.content}>
         <h2 className={styles.heading}>{name}</h2>
-        <dl className={styles.infoList}>
-          <div className={styles.item}>
-            <dt>Population:</dt>
-            <dd>{population.toLocaleString()}</dd>
-          </div>
-
-          <div className={styles.item}>
-            <dt>Region:</dt>
-            <dd>{region}</dd>
-          </div>
-
-          <div className={styles.item}>
-            <dt>{capitals.length > 1 ? "Capitals:" : "Capital:"}</dt>
-            <dd>{capitalsString}</dd>
-          </div>
-        </dl>
+        <InfoList
+          className={styles.infoList}
+          items={[
+            { label: "Population:", value: population.toLocaleString() },
+            { label: "Region:", value: region },
+            {
+              label: capitals.length > 1 ? "Capitals:" : "Capital:",
+              value: capitalsString,
+            },
+          ]}
+        />
       </div>
     </article>
   );

@@ -1,0 +1,29 @@
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-50);
+}
+
+.item {
+  display: flex;
+  gap: var(--space-100);
+}
+
+.item > dt {
+  font-weight: var(--fw-semibold);
+}
+
+.compact {
+  font-size: var(--fs-sm);
+}
+
+.detailed {
+  font-size: var(--fs-sm);
+  line-height: 32px;
+}
+
+@media (min-width: 48rem) {
+  .detailed {
+    font-size: var(--fs-base);
+  }
+}

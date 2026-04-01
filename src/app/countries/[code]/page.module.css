@@ -1,5 +1,31 @@
 .main {
   display: flex;
   justify-content: center;
-  padding: var(--space-600) var(--space-200);
+  padding: var(--space-500) var(--space-200);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-800);
+}
+
+@media (min-width: 48rem) {
+  .main {
+    padding: var(--space-500) var(--space-500);
+  }
+
+  .wrapper {
+    gap: var(--space-700);
+  }
+}
+
+@media (min-width: 80rem) {
+  .main {
+    padding: var(--space-1000) var(--space-500);
+  }
+
+  .wrapper {
+    gap: var(--space-1000);
+  }
 }
