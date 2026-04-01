@@ -1,7 +1,6 @@
 .header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
   padding: 0px 16px;
 
   width: 100%;
@@ -10,6 +9,12 @@
   color: var(--color-header-text);
   background: var(--color-header-bg);
   box-shadow: var(--color-header-shadow);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .link {
