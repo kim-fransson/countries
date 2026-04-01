@@ -12,6 +12,6 @@
 
 @media (min-width: 48rem) {
   .main {
-    padding: var(--space-600) var(--space-200);
+    padding: var(--space-600) var(--space-500);
   }
 }

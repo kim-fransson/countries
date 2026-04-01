@@ -11,8 +11,9 @@ import {
   LIGHT_COLORS,
   DARK_COLORS,
 } from "@/constants";
-import styles from "./DarkLightToggle.module.css";
 import { setCSSVariables } from "@/utils";
+
+import styles from "./DarkLightToggle.module.css";
 
 export type DarkLightToggleProps = {
   defaultTheme?: "light" | "dark";

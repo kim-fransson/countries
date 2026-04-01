@@ -1,7 +1,8 @@
 .grid {
   display: grid;
   gap: var(--space-500);
-  grid-template-columns: repeat(auto-fill, minmax(264px, 1fr));
+  grid-template-columns: repeat(auto-fill, 264px);
+  justify-content: center;
   list-style: none;
   padding: 0;
 }

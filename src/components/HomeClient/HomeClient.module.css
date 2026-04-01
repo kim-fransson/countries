@@ -8,11 +8,17 @@
   width: 100%;
 }
 
-@media (min-width: 70rem) {
+@media (min-width: 48rem) {
   .controls {
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    gap: var(--space-100);
+  }
+}
+
+@media (min-width: 70rem) {
+  .controls {
+    justify-content: space-between;
   }
 
   .searchWrapper {
