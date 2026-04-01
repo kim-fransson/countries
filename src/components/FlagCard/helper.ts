@@ -3,3 +3,7 @@ export const capitalsToString = (capitals: string[]) => {
     ? (capitals[0] ?? "")
     : `${capitals.slice(0, -1).join(", ")} and ${capitals.at(-1)}`;
 };
+
+export const formatNumber = (value: number) => {
+  return new Intl.NumberFormat("en-US").format(value);
+};

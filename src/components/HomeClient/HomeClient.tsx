@@ -48,19 +48,19 @@ function HomeClient({ countries }: HomeClientProps) {
       <div className={styles.controls}>
         <div className={styles.searchWrapper}>
           <SearchField
-            aria-label="Search for a country"
-            placeholder="Search for a country..."
+            aria-label='Search for a country'
+            placeholder='Search for a country...'
             value={searchTerm}
             onChange={setSearchTerm}
           />
         </div>
         <DropDown
-          aria-label="Filter by Region"
-          placeholder="Filter by Region"
+          aria-label='Filter by Region'
+          placeholder='Filter by Region'
           value={selectedRegion ?? "all"}
           onChange={handleRegionChange}
         >
-          <SelectItem id="all">All Regions</SelectItem>
+          <SelectItem id='all'>All Regions</SelectItem>
           {REGION_OPTIONS.map((region) => (
             <SelectItem key={region.id} id={region.id}>
               {region.name}

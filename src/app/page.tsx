@@ -10,6 +10,8 @@ import styles from "./page.module.css";
 async function CountriesLoader() {
   const countries = await fetchAllCountries();
 
+  countries.sort((a, b) => (a.name.common < b.name.common ? -1 : 1));
+
   return <HomeClient countries={countries} />;
 }
 

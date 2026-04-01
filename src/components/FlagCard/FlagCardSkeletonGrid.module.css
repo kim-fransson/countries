@@ -9,6 +9,7 @@
   background: var(--color-search-bg);
   border-radius: 5px;
   box-shadow: var(--color-search-shadow);
+  width: 100%;
 }
 
 .dropdownPlaceholder {
@@ -17,6 +18,14 @@
   background: var(--color-dropdown-bg);
   border-radius: 5px;
   box-shadow: var(--color-dropdown-shadow);
+}
+
+@media (min-width: 48rem) {
+  .controls {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-100);
+  }
 }
 
 @media (min-width: 70rem) {
@@ -28,6 +37,5 @@
 
   .searchPlaceholder {
     max-width: 480px;
-    flex: 1;
   }
 }

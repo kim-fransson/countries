@@ -16,8 +16,9 @@ import type {
 import { ChevronDown } from "lucide-react";
 
 import { DropDownItem } from "./DropDownItem";
-import styles from "./DropDown.module.css";
 import useBoop from "@/hooks/useBoop";
+
+import styles from "./DropDown.module.css";
 
 export interface DropDownProps<
   T extends object,

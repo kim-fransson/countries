@@ -1,5 +1,3 @@
-import React from "react";
-
 import FlagCardSkeleton from "./FlagCardSkeleton";
 import skeletonStyles from "./FlagCardSkeletonGrid.module.css";
 import gridStyles from "./FlagCardListView.module.css";
@@ -11,7 +9,7 @@ function FlagCardSkeletonGrid() {
         <div className={skeletonStyles.searchPlaceholder} />
         <div className={skeletonStyles.dropdownPlaceholder} />
       </div>
-      <div className={gridStyles.grid} aria-hidden="true">
+      <div className={gridStyles.grid} aria-hidden='true'>
         {Array.from({ length: 8 }, (_, i) => (
           <FlagCardSkeleton key={i} />
         ))}

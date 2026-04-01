@@ -10,7 +10,7 @@
 }
 
 .item > dt {
-  font-weight: var(--fw-semibold);
+  font-weight: var(--fw-extrabold);
 }
 
 .compact {

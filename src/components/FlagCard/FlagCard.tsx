@@ -4,7 +4,7 @@ import React from "react";
 import InfoList from "@/components/InfoList";
 
 import styles from "./FlagCard.module.css";
-import { capitalsToString } from "./helper";
+import { capitalsToString, formatNumber } from "./helper";
 
 interface FlagCardProps {
   name: string;
@@ -24,6 +24,7 @@ function FlagCard({
   capitals,
 }: FlagCardProps) {
   const capitalsString = capitalsToString(capitals);
+  const formattedPopulation = formatNumber(population);
 
   return (
     <article className={styles.card}>
@@ -39,7 +40,7 @@ function FlagCard({
         <InfoList
           className={styles.infoList}
           items={[
-            { label: "Population:", value: population.toLocaleString() },
+            { label: "Population:", value: formattedPopulation },
             { label: "Region:", value: region },
             {
               label: capitals.length > 1 ? "Capitals:" : "Capital:",

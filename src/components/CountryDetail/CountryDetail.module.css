@@ -72,6 +72,7 @@
 
   .bordersLabel {
     white-space: nowrap;
+    font-weight: var(--fw-extrabold);
   }
 }
 

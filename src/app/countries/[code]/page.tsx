@@ -14,10 +14,15 @@ interface CountryDetailPageProps {
 
 async function CountryDetailLoader({ code }: { code: string }) {
   const country = await fetchCountryByCode(code);
-  const borderCountries = await fetchCountriesByCodes(country.borders);
+  const borderCountries = await fetchCountriesByCodes(
+    country.borders,
+  );
 
   return (
-    <CountryDetail country={country} borderCountries={borderCountries} />
+    <CountryDetail
+      country={country}
+      borderCountries={borderCountries}
+    />
   );
 }
 
@@ -29,7 +34,9 @@ export default async function CountryDetailPage({
   return (
     <main className={styles.main}>
       <MaxWidthWrapper className={styles.wrapper}>
-        <BackButton />
+        <div>
+          <BackButton className={styles.backBtn} />
+        </div>
         <Suspense fallback={<CountryDetailSkeleton />}>
           <CountryDetailLoader code={code} />
         </Suspense>

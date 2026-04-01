@@ -4,7 +4,7 @@ export const LIGHT_COLORS = {
   "--color-bg": "var(--color-white)",
   "--color-text": "var(--color-grey-950)",
   "--color-text-muted": "hsl(200, 24%, 40%)",
-  "--color-accent": "hsl(202, 86%, 94%)",
+  "--color-accent": "var(--color-grey-100)",
   "--color-button-bg": "var(--color-white)",
   "--color-button-text": "var(--color-grey-950)",
   "--color-button-shadow": "0px 0px 7px rgba(0, 0, 0, 0.1)",
@@ -23,14 +23,15 @@ export const LIGHT_COLORS = {
   "--color-dropdown-text": "var(--color-grey-950)",
   "--color-dropdown-shadow": "0px 2px 9px rgba(0, 0, 0, 0.0532439)",
   "--color-dropdown-item-focused": "var(--color-grey-50)",
+  "--color-focus-ring": "var(--color-blue-800)",
 };
 
 export const DARK_COLORS = {
   "--color-bg": "var(--color-blue-950)",
   "--color-text": "var(--color-white)",
   "--color-text-muted": "hsl(0, 0%, 100%)",
-  "--color-accent": "hsl(209, 23%, 22%)",
-  "--color-button-bg": "var(--color-blue-950)",
+  "--color-accent": "var(--color-blue-950)",
+  "--color-button-bg": "var(--color-blue-900)",
   "--color-button-text": "var(--color-white)",
   "--color-button-shadow": "0px 0px 7px rgba(0, 0, 0, 0.1)",
   "--color-header-bg": "var(--color-blue-900)",
@@ -48,6 +49,7 @@ export const DARK_COLORS = {
   "--color-dropdown-text": "var(--color-white)",
   "--color-dropdown-shadow": "0px 2px 9px rgba(0, 0, 0, 0.0532439)",
   "--color-dropdown-item-focused": "var(--color-blue-800)",
+  "--color-focus-ring": "var(--color-blue-800)",
 };
 
 export const REGION_OPTIONS = [

@@ -14,6 +14,20 @@
   color: inherit;
 }
 
+.gridItem[data-hovered] {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .gridItem {
+    transition: transform 500ms ease-out;
+  }
+  .gridItem[data-hovered] {
+    transition: transform 250ms ease-in;
+  }
+}
+
 .gridItem[data-focus-visible] {
   outline: 2px solid var(--color-blue-800);
   outline-offset: 2px;
