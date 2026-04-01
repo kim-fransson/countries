@@ -22,6 +22,7 @@ export const LIGHT_COLORS = {
   "--color-dropdown-bg": "var(--color-white)",
   "--color-dropdown-text": "var(--color-grey-950)",
   "--color-dropdown-shadow": "0px 2px 9px rgba(0, 0, 0, 0.0532439)",
+  "--color-dropdown-item-focused": "var(--color-grey-50)",
 };
 
 export const DARK_COLORS = {
@@ -46,4 +47,5 @@ export const DARK_COLORS = {
   "--color-dropdown-bg": "var(--color-blue-900)",
   "--color-dropdown-text": "var(--color-white)",
   "--color-dropdown-shadow": "0px 2px 9px rgba(0, 0, 0, 0.0532439)",
+  "--color-dropdown-item-focused": "var(--color-blue-800)",
 };

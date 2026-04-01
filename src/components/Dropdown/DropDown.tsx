@@ -10,13 +10,20 @@ import {
   ListBox,
   ListBoxItem,
 } from "react-aria-components";
-import type { SelectProps } from "react-aria-components";
-import { UNSAFE_PortalProvider } from "@react-aria/overlays";
+import type {
+  ListBoxItemProps,
+  SelectProps,
+} from "react-aria-components";
 import { ChevronDown } from "lucide-react";
 
+import { DropDownItem } from "./DropDownItem";
+import { motion } from "motion/react";
 import styles from "./DropDown.module.css";
+import useBoop from "@/hooks/useBoop";
 
-export interface DropDownProps<T extends object> extends SelectProps<T> {
+export interface DropDownProps<
+  T extends object,
+> extends SelectProps<T> {
   label?: string;
   placeholder?: string;
   children: React.ReactNode;
@@ -24,34 +31,36 @@ export interface DropDownProps<T extends object> extends SelectProps<T> {
 
 function DropDown<T extends object>({
   label,
-  placeholder = "Filter by Region",
+  placeholder,
   children,
   ...props
 }: DropDownProps<T>) {
-  const containerRef = React.useRef<HTMLDivElement>(null);
-
+  const [style, trigger] = useBoop({ y: 2 });
   return (
-    <div ref={containerRef}>
-      <UNSAFE_PortalProvider getContainer={() => containerRef.current!}>
-        <Select {...props} className={styles.select}>
-          {label && <Label>{label}</Label>}
-          <Button className={styles.trigger}>
-            <SelectValue className={styles.value}>
-              {({ selectedText }) => selectedText || placeholder}
-            </SelectValue>
-            <span aria-hidden="true" className={styles.chevron}>
-              <ChevronDown size={16} />
-            </span>
-          </Button>
-          <Popover className={styles.popover} offset={8}>
-            <ListBox className={styles.listbox}>
-              {children}
-            </ListBox>
-          </Popover>
-        </Select>
-      </UNSAFE_PortalProvider>
-    </div>
+    <Select {...props} className={styles.select}>
+      {label && <Label>{label}</Label>}
+      <Button className={styles.trigger} onHoverStart={trigger}>
+        <SelectValue className={styles.value}>
+          {({ selectedText }) => selectedText || placeholder}
+        </SelectValue>
+        <span
+          aria-hidden='true'
+          className={styles.chevron}
+        >
+          <span style={style}>
+            <ChevronDown size={16} />
+          </span>
+        </span>
+      </Button>
+      <Popover className={styles.popover} offset={8}>
+        <ListBox className={styles.listbox}>{children}</ListBox>
+      </Popover>
+    </Select>
   );
+}
+
+export function SelectItem(props: ListBoxItemProps) {
+  return <DropDownItem {...props} />;
 }
 
 export { ListBoxItem };
