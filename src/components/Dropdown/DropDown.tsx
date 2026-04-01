@@ -8,7 +8,6 @@ import {
   SelectValue,
   Popover,
   ListBox,
-  ListBoxItem,
 } from "react-aria-components";
 import type {
   ListBoxItemProps,
@@ -17,7 +16,6 @@ import type {
 import { ChevronDown } from "lucide-react";
 
 import { DropDownItem } from "./DropDownItem";
-import { motion } from "motion/react";
 import styles from "./DropDown.module.css";
 import useBoop from "@/hooks/useBoop";
 
@@ -43,10 +41,7 @@ function DropDown<T extends object>({
         <SelectValue className={styles.value}>
           {({ selectedText }) => selectedText || placeholder}
         </SelectValue>
-        <span
-          aria-hidden='true'
-          className={styles.chevron}
-        >
+        <span aria-hidden='true' className={styles.chevron}>
           <span style={style}>
             <ChevronDown size={16} />
           </span>
@@ -63,5 +58,4 @@ export function SelectItem(props: ListBoxItemProps) {
   return <DropDownItem {...props} />;
 }
 
-export { ListBoxItem };
 export default DropDown;

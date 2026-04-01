@@ -42,6 +42,7 @@ export const Light: Story = {
           style={{
             padding: "4rem",
             background: "#ebf2f6",
+            ...LIGHT_COLORS,
           }}
         >
           <Story />
@@ -61,6 +62,7 @@ export const Dark: Story = {
           style={{
             padding: "4rem",
             background: "#ebf2f6",
+            ...DARK_COLORS,
           }}
         >
           <Story />
