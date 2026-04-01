@@ -2,13 +2,15 @@
   background: var(--color-card-bg);
   color: var(--color-card-text);
   box-shadow: var(--color-card-shadow);
-  max-width: 16.5rem;
-
   border-radius: 5px;
+  overflow: hidden;
 }
 
 .image {
   object-fit: cover;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 264 / 160;
 }
 
 .content {

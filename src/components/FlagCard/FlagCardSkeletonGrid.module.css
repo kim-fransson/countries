@@ -1,0 +1,33 @@
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-500);
+}
+
+.searchPlaceholder {
+  height: 56px;
+  background: var(--color-search-bg);
+  border-radius: 5px;
+  box-shadow: var(--color-search-shadow);
+}
+
+.dropdownPlaceholder {
+  height: 56px;
+  width: 200px;
+  background: var(--color-dropdown-bg);
+  border-radius: 5px;
+  box-shadow: var(--color-dropdown-shadow);
+}
+
+@media (min-width: 70rem) {
+  .controls {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .searchPlaceholder {
+    max-width: 480px;
+    flex: 1;
+  }
+}

@@ -1,0 +1,58 @@
+.card {
+  background: var(--color-card-bg);
+  box-shadow: var(--color-card-shadow);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  aspect-ratio: 264 / 160;
+  background: var(--color-accent);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.content {
+  padding: 24px 24px 48px 24px;
+}
+
+.titleLine {
+  height: 1.125rem;
+  width: 60%;
+  background: var(--color-accent);
+  border-radius: 4px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.infoLines {
+  margin-top: var(--space-200);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-50);
+}
+
+.line {
+  height: 0.875rem;
+  width: 80%;
+  background: var(--color-accent);
+  border-radius: 4px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .imagePlaceholder,
+  .titleLine,
+  .line {
+    animation: none;
+  }
+}

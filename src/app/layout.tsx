@@ -7,9 +7,9 @@ import {
   LIGHT_COLORS,
   DARK_COLORS,
 } from "@/constants";
-import DarkLightToggle from "@/components/DarkLightToggle";
 import "./globals.css";
 import LanguageProvider from "@/components/LanguageProvider";
+import RouterProvider from "@/components/RouterProvider";
 import Header from "@/components/Header";
 
 const nunitoSans = Nunito_Sans({
@@ -44,8 +44,10 @@ export default async function RootLayout({
     >
       <body>
         <LanguageProvider lang={lang}>
-          <Header defaultTheme={theme as "light" | "dark"} />
-          {children}
+          <RouterProvider>
+            <Header defaultTheme={theme as "light" | "dark"} />
+            {children}
+          </RouterProvider>
         </LanguageProvider>
       </body>
     </html>

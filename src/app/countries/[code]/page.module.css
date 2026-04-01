@@ -1,0 +1,5 @@
+.main {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-600) var(--space-200);
+}
