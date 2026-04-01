@@ -31,6 +31,14 @@ export default defineConfig({
           },
         },
       },
+      {
+        test: {
+          name: 'unit',
+          include: ['src/**/*.test.{ts,tsx}'],
+          exclude: ['**/*.stories.*'],
+          environment: 'jsdom',
+        },
+      },
     ],
   },
 });

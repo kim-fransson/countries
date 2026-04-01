@@ -2,8 +2,11 @@ import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { expect, fn, userEvent, within } from "storybook/test";
 
 import DropDown, { SelectItem } from "./DropDown";
-import { REGION_OPTIONS } from "./helpers";
-import { LIGHT_COLORS, DARK_COLORS } from "@/constants";
+import {
+  LIGHT_COLORS,
+  DARK_COLORS,
+  REGION_OPTIONS,
+} from "@/constants";
 import { setCSSVariables } from "@/utils";
 
 const meta = {

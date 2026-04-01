@@ -49,3 +49,11 @@ export const DARK_COLORS = {
   "--color-dropdown-shadow": "0px 2px 9px rgba(0, 0, 0, 0.0532439)",
   "--color-dropdown-item-focused": "var(--color-blue-800)",
 };
+
+export const REGION_OPTIONS = [
+  { id: "africa", name: "Africa" },
+  { id: "americas", name: "America" },
+  { id: "asia", name: "Asia" },
+  { id: "europe", name: "Europe" },
+  { id: "oceania", name: "Oceania" },
+] as const;
