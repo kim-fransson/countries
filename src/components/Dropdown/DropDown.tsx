@@ -25,7 +25,7 @@ export interface DropDownProps<
 > extends SelectProps<T> {
   label?: string;
   placeholder?: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 function DropDown<T extends object>({
