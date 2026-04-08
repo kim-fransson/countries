@@ -8,7 +8,10 @@ const COUNTRY_DETAIL_FIELDS =
   "name,flags,population,region,subregion,capital,tld,currencies,languages,borders";
 
 export async function fetchAllCountries(): Promise<Country[]> {
-  const response = await fetch(ALL_COUNTRIES_URL);
+  const response = await fetch(ALL_COUNTRIES_URL, {
+    cache: "force-cache",
+    next: { revalidate: 604800 },
+  });
 
   if (!response.ok) {
     throw new Error(`Failed to fetch countries: ${response.status}`);
@@ -22,10 +25,13 @@ export async function fetchCountryByCode(
 ): Promise<CountryDetail> {
   const response = await fetch(
     `${BASE_URL}/alpha/${code}?fields=${COUNTRY_DETAIL_FIELDS}`,
+    { cache: "force-cache", next: { revalidate: 604800 } },
   );
 
   if (!response.ok) {
-    throw new Error(`Failed to fetch country ${code}: ${response.status}`);
+    throw new Error(
+      `Failed to fetch country ${code}: ${response.status}`,
+    );
   }
 
   return response.json();
@@ -40,10 +46,13 @@ export async function fetchCountriesByCodes(
 
   const response = await fetch(
     `${BASE_URL}/alpha?codes=${codes.join(",")}&fields=name,cca2`,
+    { cache: "force-cache", next: { revalidate: 604800 } },
   );
 
   if (!response.ok) {
-    throw new Error(`Failed to fetch border countries: ${response.status}`);
+    throw new Error(
+      `Failed to fetch border countries: ${response.status}`,
+    );
   }
 
   return response.json();

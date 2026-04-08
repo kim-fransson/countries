@@ -14,7 +14,7 @@ interface FlagCardListViewProps {
 function FlagCardListView({ countries }: FlagCardListViewProps) {
   const handleFocus = useCallback((e: React.FocusEvent) => {
     const target = e.target as HTMLElement;
-    if (target.matches("[role=row]")) {
+    if (target.matches("[role=row]:focus-visible")) {
       target.scrollIntoView({ block: "center" });
     }
   }, []);
