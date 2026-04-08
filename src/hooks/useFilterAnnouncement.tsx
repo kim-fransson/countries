@@ -17,7 +17,15 @@ function useFilterAnnouncement(count: number): void {
           ? "1 country found"
           : `${count} countries found`;
 
-    announce(message, "polite");
+    // Delay so the announcement doesn't interrupt
+    // the screen reader announcing search input changes.
+    const timeoutId = window.setTimeout(() => {
+      announce(message, "polite");
+    }, 500);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
   }, [count]);
 }
 
