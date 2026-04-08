@@ -1,3 +1,5 @@
+import { cache } from "react";
+
 import type { Country, CountryDetail, BorderCountry } from "@/types";
 
 const BASE_URL = "https://restcountries.com/v3.1";
@@ -20,7 +22,7 @@ export async function fetchAllCountries(): Promise<Country[]> {
   return response.json();
 }
 
-export async function fetchCountryByCode(
+export const fetchCountryByCode = cache(async function fetchCountryByCode(
   code: string,
 ): Promise<CountryDetail> {
   const response = await fetch(
@@ -35,7 +37,7 @@ export async function fetchCountryByCode(
   }
 
   return response.json();
-}
+});
 
 export async function fetchCountriesByCodes(
   codes: string[],

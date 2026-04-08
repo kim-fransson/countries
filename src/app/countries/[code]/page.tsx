@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
@@ -10,6 +11,25 @@ import styles from "./page.module.css";
 
 interface CountryDetailPageProps {
   params: Promise<{ code: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: CountryDetailPageProps): Promise<Metadata> {
+  const { code } = await params;
+  const country = await fetchCountryByCode(code);
+
+  const capital = country.capital?.[0];
+  const languages = Object.values(country.languages).join(", ");
+  const description = `${country.name.official}${capital ? ` — Capital: ${capital}.` : ""} Population: ${country.population.toLocaleString("en-US")}. Region: ${country.region}. Languages: ${languages}.`;
+
+  return {
+    title: country.name.common,
+    description,
+    icons: {
+      icon: country.flags.svg,
+    },
+  };
 }
 
 async function CountryDetailLoader({ code }: { code: string }) {
