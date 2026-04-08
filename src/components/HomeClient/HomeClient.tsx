@@ -7,6 +7,7 @@ import SearchField from "@/components/SearchField";
 import DropDown, { SelectItem } from "@/components/Dropdown";
 import FlagCardListView from "@/components/FlagCard/FlagCardListView";
 import useDebounce from "@/hooks/useDebounce";
+import useFilterAnnouncement from "@/hooks/useFilterAnnouncement";
 import { REGION_OPTIONS } from "@/constants";
 import type { Country } from "@/types";
 
@@ -34,6 +35,8 @@ function HomeClient({ countries }: HomeClientProps) {
       return matchesSearch && matchesRegion;
     });
   }, [countries, debouncedSearchTerm, selectedRegion]);
+
+  useFilterAnnouncement(filteredCountries.length);
 
   function handleRegionChange(key: Key | null) {
     if (key === "all") {

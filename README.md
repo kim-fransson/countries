@@ -69,7 +69,7 @@ Based on [accessibility.md](guidance/accessibility.md).
 - [x] Landmark regions used appropriately — _verified: `<header>` in Header, `<main>` on both pages and error pages_
 - [x] Lists of items use proper elements — _verified: `GridList` renders list markup, `InfoList` uses `<dl>/<dt>/<dd>`_
 - [x] Tables have proper headers/captions — _N/A: no tables used_
-- [ ] Page titles are descriptive and unique per view — _`metadata.title` is still default "Create Next App"_
+- [x] Page titles are descriptive and unique per view — _Metadata is added for all pages_
 
 #### Operable — Keyboard
 
@@ -111,7 +111,7 @@ Based on [accessibility.md](guidance/accessibility.md).
 
 - [x] Valid, well-structured HTML — _verified: semantic elements throughout (`article`, `header`, `main`, `dl`)_
 - [x] ARIA attributes used correctly — _verified: React Aria components manage roles, states, and properties_
-- [ ] Dynamic content changes announced via `aria-live` — _filtering results and empty state not announced to screen readers_
+- [x] Dynamic content changes announced via `aria-live` — _filtering results and empty state announced via `useFilterAnnouncement` hook using `@react-aria/live-announcer`_
 - [x] Custom components follow ARIA authoring practices — _verified: React Aria Select, SearchField, ToggleButton, GridList all follow WAI-ARIA patterns_
 - [ ] Country items work with screen readers in meaningful order — _needs manual screen reader testing_
 
